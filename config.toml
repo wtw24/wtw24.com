@@ -389,7 +389,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
     # LoveIt NEW | 0.1.1
     enable = true
     # Disqus shortname to use Disqus in posts
-    shortname = "wtw24"
+    shortname = "wtw24blog"
 
 #  # Gitalk comment config
 #  [params.page.comment.gitalk]
