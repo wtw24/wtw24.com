@@ -4,7 +4,7 @@
   .single-title {
     margin: 2rem 0 1.5rem;
     font-size: 1.6rem;
-    font-weight: bold;
+    font-weight: 500;
     line-height: 140%;
     border-bottom: 2px solid #f0f0f0;
   }
@@ -90,7 +90,7 @@
     h4,
     h5,
     h6 {
-      font-weight: bold;
+      font-weight: 500;
       margin: 3rem 0 1.2rem;
 
       [theme=dark] & {

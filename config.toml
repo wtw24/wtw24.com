@@ -13,6 +13,9 @@ languageName = "Russian"
 # whether to include Chinese/Japanese/Korean
 hasCJKLanguage = false
 
+# determines default content language ["en", "zh-cn", "fr", "pl", ...]
+defaultContentLanguage = "ru"
+
 # default amount of posts in each pages
 paginate = 12
 # google analytics code [UA-XXXXXXXX-X]
