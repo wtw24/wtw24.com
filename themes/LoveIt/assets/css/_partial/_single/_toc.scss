@@ -15,7 +15,7 @@
 
       a:first-child::before {
         content: "|";
-        font-weight: bolder;
+        font-weight: 500;
         margin-right: .5rem;
         color: $single-link-color;
 
@@ -71,6 +71,7 @@
   }
 
   .toc-title {
+    font-weight: 500;
     margin: .8rem 0;
   }
 
