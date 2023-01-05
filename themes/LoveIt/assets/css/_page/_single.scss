@@ -2,10 +2,11 @@
 
 .single {
   .single-title {
-    margin: 2rem 0 .5rem;
+    margin: 2rem 0 1.5rem;
     font-size: 1.6rem;
     font-weight: bold;
     line-height: 140%;
+    border-bottom: 2px solid #f0f0f0;
   }
 
   .single-subtitle {
@@ -17,6 +18,7 @@
 
   .post-meta {
     font-size: .875rem;
+    margin-bottom: 1.5rem;
     color: $global-font-secondary-color;
 
     span {
@@ -89,7 +91,7 @@
     h5,
     h6 {
       font-weight: bold;
-      margin: 1.2rem 0;
+      margin: 3rem 0 1.2rem;
 
       [theme=dark] & {
         font-weight: bolder;
@@ -117,7 +119,7 @@
     }
 
     p {
-      margin: .5rem 0;
+      margin: 1.2rem 0;
     }
 
     b, strong {
