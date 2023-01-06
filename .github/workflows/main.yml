@@ -28,6 +28,9 @@ jobs:
       - name: Build
         run: hugo --gc --minify
 
+      - name: Pagefind
+        run: npx -y pagefind --source public
+
 #      - name: Algolia
 #        uses: darrenjennings/algolia-docsearch-action@master
 #        with:
