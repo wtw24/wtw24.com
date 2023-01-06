@@ -32,7 +32,13 @@ header {
   justify-content: space-between;
   align-items: center;
   box-sizing: border-box;
-  width: 100%;
+}
+
+.page {
+  position: relative;
+  max-width: 800px;
+  width: 60%;
+  margin: 0 auto;
 }
 
 .header-title {
@@ -156,7 +162,10 @@ header {
   }
 
   .header-wrapper {
-    padding: 0 2rem 0 10vh;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    //padding: 0 2rem 0 10vh;
 
     .header-title {
       font-weight: 500;
