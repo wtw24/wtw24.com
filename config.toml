@@ -18,6 +18,21 @@ defaultContentLanguage = "ru"
 
 # default amount of posts in each pages
 paginate = 12
+
+# Analytics config
+[params.analytics]
+  enable = false
+
+# Cookie consent config
+[params.cookieconsent]
+  enable = true
+
+# text strings used for Cookie consent banner
+[params.cookieconsent.content]
+  message = "message_txt"
+  dismiss = "dismiss_txt"
+  link = "http://wtw.com"
+
 # google analytics code [UA-XXXXXXXX-X]
 # googleAnalytics = ""
 # copyright description used only for seo schema
