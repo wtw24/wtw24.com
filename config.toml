@@ -175,7 +175,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
     highlightTag = "em"
     # LoveIt NEW | 0.2.4 whether to use the absolute URL based on the baseURL in search index
     absoluteURL = false
-    [params.search.algolia]
+  [params.search.algolia]
     index = "wtw24_com"
     appID = "UH2Q2GBNQ8"
     searchKey = "16464478d3c7989ace26e5c420119b1d"
