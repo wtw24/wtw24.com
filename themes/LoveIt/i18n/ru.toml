@@ -109,7 +109,7 @@ other = "Содержание"
 other = "Опубликовано {{ .Date }}"
 
 [includedInCategories]
-other = "включен в {{ .Categories }}"
+other = "Включен в {{ .Categories }}"
 
 [wordCount]
 one = "Одно слово"
