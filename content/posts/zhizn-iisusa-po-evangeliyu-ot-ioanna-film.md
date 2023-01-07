@@ -2,10 +2,15 @@
 author: "Wladimir Wendland"
 date: 2023-01-06
 title: Жизнь Иисуса по Евангелию от Иоанна. (Полный фильм)
-tags: ["video"]
-categories: ["Video"]
+tags: ["медиа", "художественный фильм"]
+categories: ["Медиа"]
 bookComments: true
 ---
+
+{{< image
+src="/img/cover_zhizn-iisusa-po-evangeliyu-ot-ioanna-film.webp"
+alt="Евангелие от Иоанна (2003)" >}}
+
 История жизни Иисуса Христа, фильм снят на основе Евангелия от Иоанна.
 
 Полный фильм в отличном качестве.
