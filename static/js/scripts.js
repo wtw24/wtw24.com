@@ -48,3 +48,19 @@ window.addEventListener('DOMContentLoaded', (event) => {
         showImages: false
     });
 });
+
+window.addEventListener('DOMContentLoaded', (event) => {
+    const items = document.querySelectorAll('.bb-text');
+
+    for (i = 0; i < items.length; ++i) {
+        items[i].innerHTML = items[i].innerHTML.replace(/(\$?\d+)/g, '<span class="bb-num">$1</span>');
+    }
+
+    $('p').html(function(i,c) {
+        return c.replace(/\d+/g, function(v){
+            return "<span class='numbers'>" + v + "</span>";
+        });
+    });
+});
+
+

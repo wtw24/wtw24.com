@@ -1,0 +1,15 @@
+{{- $place := .Get "p" | default (.Get 0) -}}
+{{- $link := .Get "l" | default (.Get 1) -}}
+{{- $md := .Inner | markdownify -}}
+
+<blockquote>
+  <p class="bb-text">{{- replace $md "\n" "</p><p class=\"bb-text\">" | safeHTML -}}</p>
+
+  <div class="text-right">
+    {{ with $link }}
+      <p><a href="{{- $link -}}" target="_blank"><span class="pref">–</span> <strong >{{- $place -}}</strong></a></p>
+    {{- else -}}
+      <p><span class="pref">–</span> <strong >{{- $place -}}</strong></p>
+    {{- end -}}
+  </div>
+</blockquote>
