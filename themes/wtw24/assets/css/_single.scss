@@ -1,0 +1,152 @@
+.single {
+  .single-title {
+    margin: 2rem 0 .5rem;
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 140%;
+    padding-bottom: .3rem;
+    border-bottom: 2px solid #f0f0f0;
+
+    i {
+      margin-right: .5rem;
+    }
+  }
+
+  .single-subtitle {
+    margin: .5rem 0 1rem;
+    font-size: 1.2rem;
+    font-weight: normal;
+    line-height: 100%;
+  }
+
+  .post-meta {
+    font-size: .875rem;
+    margin: 1.5rem 0;
+    color: #404040;
+    display: flex;
+    justify-content: space-between;
+
+    i {
+      margin-left: .3rem;
+      margin-right: .3rem;
+    }
+  }
+
+  .content {
+    > h2 {
+      font-size: 1.5rem;
+
+      & code {
+        font-size: 1.25rem;
+      }
+    }
+
+    > h3 {
+      font-size: 1.375rem;
+
+      & code {
+        font-size: 1.125rem;
+      }
+    }
+
+    > h4 {
+      font-size: 1.25rem;
+
+      & code {
+        font-size: 1rem;
+      }
+    }
+
+    > h5 {
+      font-size: 1.125rem;
+    }
+
+    > h6 {
+      font-size: 1rem;
+    }
+
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-weight: 500;
+      margin: 3rem 0 1.2rem;
+    }
+
+    > h2,
+    > h3,
+    > h4,
+    > h5,
+    > h6 {
+      > .header-mark::before {
+        content: "|";
+        margin-right: .3125rem;
+        color: #2d96bd;
+      }
+    }
+
+    > h2 > .header-mark::before {
+      content: "#";
+    }
+
+    blockquote {
+      display: block;
+      border-radius: 4px;
+      border-left: 0.3rem solid #e0e9fa;
+      background-color: rgba(224,233,250,0.2);
+      padding: 0.25rem 0.75rem;
+      margin: 1rem 0;
+    }
+
+    p {
+      margin: 1.2rem 0;
+    }
+  }
+
+
+  .post-footer {
+    margin-top: 3rem;
+
+    .post-info {
+      padding: .5rem 0 2rem;
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.9rem;
+      border-top: 1px solid #f0f0f0;
+    }
+  }
+
+}
+
+.post-nav {
+  margin: 4rem 0 2rem;
+  &::before,
+  &::after {
+    content: ' ';
+    display: table;
+  }
+
+  & a.prev,
+  & a.next {
+    font-size: 1rem;
+    font-weight: 600;
+    @include transition(all 0.3s ease-out);
+  }
+
+  & a.prev {
+    float: left;
+  }
+
+  & a.prev:hover {
+    @include transform(translateX(-4px));
+  }
+
+  & a.next {
+    float: right;
+  }
+
+  & a.next:hover {
+    @include transform(translateX(4px));
+  }
+}

@@ -1,0 +1,27 @@
+{{- partial "init" . -}}
+
+<!doctype html>
+<html lang="{{ .Site.LanguageCode }}" class="h-100">
+  <head>
+    {{- partial "head" . -}}
+  </head>
+  <body class="d-flex flex-column h-100">
+    <header>
+      {{- partial "header" . -}}
+    </header>
+    <main class="flex-shrink-0 container">
+      {{- block "content" . }}{{ end -}}
+    </main>
+    <footer class="footer mt-auto py-3">
+      {{- partial "footer" . -}}
+    </footer>
+
+    <div id="fixed-buttons">
+      <a href="#" id="back-to-top" class="fixed-button" title="Наверх">
+        <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+      </a>
+    </div>
+
+    {{- partial "scripts" . -}}
+  </body>
+</html>

@@ -1,0 +1,18 @@
+<div class="container py-3 my-4">
+  <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+    {{ $current := . }}
+    {{ range .Site.Menus.main }}
+      {{ $active := or ($current.IsMenuCurrent "nav" .) ($current.HasMenuCurrent "nav" .) }}
+      {{ $active = or $active (eq .Name $current.Title) }}
+      {{ $active = or $active (and (eq .Name "Заметки") (eq $current.Section "posts")) }}
+      {{ $active = or $active (and (eq .Name "Tags") (eq $current.Section "tags")) }}
+      {{ $active = or $active (and (eq .Name "Категории") (eq $current.Section "categories")) }}
+
+      <li class="nav-item">
+        <a class="nav-link px-2 text-muted{{ if $active }} active" aria-current="page{{ end }}"
+           href="{{ .URL }}" {{ if eq .Params.blank true }} target="_blank" rel="noopener"{{ end }}>{{ .Name }}</a>
+      </li>
+    {{ end }}
+  </ul>
+  <p class="text-center text-muted">© 2022-{{ dateFormat "2006" now }} Wladimir Wendland</p>
+</div>

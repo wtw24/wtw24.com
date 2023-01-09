@@ -1,0 +1,89 @@
+{{- define "content" -}}
+  {{- $params := .Scratch.Get "params" -}}
+
+  {{- $toc := $params.toc -}}
+
+  <div class="row g-5">
+    <div class="col-md-{{- if eq $toc true -}}8{{- else -}}12{{- end -}}">
+      <article class="page single">
+        <h1 class="single-title">
+          <i class="fa-solid fa-file-lines"></i>
+          {{- .Title -}}
+        </h1>
+
+        {{- with $params.subtitle -}}
+          <h2 class="single-subtitle">{{ . }}</h2>
+        {{- end -}}
+
+        <div class="post-meta">
+          <section>
+            {{- $categories := slice -}}
+            {{- range .Params.categories -}}
+              {{- $category := partialCached "function/path.html" . . | printf "/categories/%v" | $.Site.GetPage -}}
+              {{- $categories = $categories | append (printf `<a href="%v"><i class="far fa-folder fa-fw" aria-hidden="true"></i>%v</a>` $category.RelPermalink $category.Title) -}}
+            {{- end -}}
+            {{- with delimit $categories "&nbsp;" -}}
+              <span class="post-category">Включен в  {{- . | safeHTML -}}</span>
+            {{- end -}}
+          </section>
+        </div>
+
+        <div class="content">
+          {{/* printf "%#v" $toc */}}
+          {{- .Content -}}
+        </div>
+
+        <div class="post-footer">
+          <div class="post-info">
+            <section class="post-tags">
+              {{- with .Params.tags -}}
+                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;
+                {{- range $index, $value := . -}}
+                  {{- if gt $index 0 }},&nbsp;{{ end -}}
+                  {{- $tag := partialCached "function/path.html" $value $value | printf "/tags/%v" | $.Site.GetPage -}}
+                  <a href="{{ $tag.RelPermalink }}">{{ $tag.Title }}</a>
+                {{- end -}}
+              {{- end -}}
+            </section>
+            <section>
+              <span>
+                <a href="javascript:void(0);" onclick="window.history.back();">
+                  <i class="fa-solid fa-angles-left"></i>
+                  Назад
+                </a>
+              </span>
+            </section>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    {{- if eq $toc true -}}
+      <div class="col-md-4">
+        <aside>
+          <div id="toc">
+            <header>
+              <h2 class="toc-title">Содержание</h2>
+            </header>
+            <div class="toc-content">
+              {{ .TableOfContents }}
+            </div>
+          </div>
+        </aside>
+      </div>
+    {{- end -}}
+  </div>
+
+  <div class="row g-5">
+    <div class="col-md-12">
+      <div class="post-nav">
+        {{- if .PrevInSection -}}
+        <a href="{{ .PrevInSection.RelPermalink }}" class="prev" rel="prev" title="{{ .PrevInSection.Title }}"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>{{ .PrevInSection.Title }}</a>
+        {{- end -}}
+        {{ if .NextInSection }}
+        <a href="{{ .NextInSection.RelPermalink }}" class="next" rel="next" title="{{ .NextInSection.Title }}">{{ .NextInSection.Title }}<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a>
+        {{- end -}}
+      </div>
+    </div>
+  </div>
+{{- end -}}

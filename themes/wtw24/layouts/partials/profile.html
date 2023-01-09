@@ -1,0 +1,25 @@
+{{- $profile := .Site.Params.home.profile -}}
+
+<section>
+  {{- $avatar := $profile.avatarURL -}}
+
+  {{- if $avatar -}}
+    <img src="{{ .Site.BaseURL }}{{ $avatar }}" alt="{{ .Site.Title }}">
+  {{- end -}}
+
+  {{- with $profile.title -}}
+    <h1 class="home-title">
+      {{- . | safeHTML -}}
+    </h1>
+  {{- end -}}
+
+  {{- with $profile.subtitle -}}
+    <p>{{- . -}}</p>
+  {{- end -}}
+
+  {{- with $profile.disclaimer -}}
+    <h3 class="home-disclaimer">
+      {{- . | safeHTML -}}
+    </h3>
+  {{- end -}}
+</section>

@@ -1,0 +1,4 @@
+{{- $params := .Params | merge .Site.Params.page -}}
+
+{{- .Scratch.Set "params" $params -}}
+

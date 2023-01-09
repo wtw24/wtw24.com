@@ -1,0 +1,55 @@
+{{- define "content" -}}
+  <div class="row g-5">
+    <div class="col-md-12">
+      {{/* partial "profile.html" . */}}
+
+      <div id="search"></div>
+
+      {{ range .Paginator.Pages }}
+        <article class="summary">
+          <h1 class="single-title">
+            <a href="{{ .Permalink }}">
+              <i class="fa-solid fa-file-lines"></i>
+              {{- .Title -}}
+            </a>
+          </h1>
+
+          <div class="post-meta">
+            {{- $categories := slice -}}
+            {{- range .Params.categories -}}
+              {{- $category := partialCached "function/path.html" . . | printf "/categories/%v" | $.Site.GetPage -}}
+              {{- $categories = $categories | append (printf `<a href="%v"><i class="far fa-folder fa-fw" aria-hidden="true"></i>%v</a>` $category.RelPermalink $category.Title) -}}
+            {{- end -}}
+            {{- with delimit $categories "&nbsp;" -}}
+              <span class="post-category">Включен в  {{- . | safeHTML -}}</span>
+            {{- end -}}
+          </div>
+
+          <div class="content">
+            <div class="pb-3">
+              {{- .Summary -}}
+            </div>
+          </div>
+
+          <div class="post-footer">
+            <a href="{{ .RelPermalink }}">Читать больше...</a>
+            {{- with .Params.tags -}}
+              <div class="post-tags">
+                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;
+                {{- range $index, $value := . -}}
+                  {{- if gt $index 0 }},&nbsp;{{ end -}}
+                  {{- $tag := partialCached "function/path.html" $value $value | printf "/tags/%v" | $.Site.GetPage -}}
+                  <a href="{{ $tag.RelPermalink }}">{{ $tag.Title }}</a>
+                {{- end -}}
+              </div>
+            {{- end -}}
+          </div>
+        </article>
+      {{ end }}
+
+      <div class="m-3 d-flex justify-content-center">
+        {{- template "_internal/pagination.html" . -}}
+      </div>
+    </div>
+  </div>
+{{- end -}}
