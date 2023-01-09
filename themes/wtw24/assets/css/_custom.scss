@@ -14,12 +14,12 @@ body {
 
 a, a::before, a::after {
   text-decoration: none;
-  color: #161209;
+  color: #2d96bd;
 }
 
 a {
   &:hover {
-    color: #2d96bd;
+    color: #161209;
   }
 }
 
