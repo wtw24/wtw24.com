@@ -90,6 +90,11 @@
       content: "#";
     }
 
+    code {
+      font-family: "Muli", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+      font-size: 1rem;
+    }
+
     blockquote {
       display: block;
       border-radius: 4px;
@@ -132,6 +137,19 @@
           color: #999;
           font-size: .7rem;
           margin-right: .4rem;
+        }
+
+        em {
+          code {
+            color: red;
+          }
+
+          color: red;
+          font-style: normal;
+        }
+
+        del {
+          text-decoration: underline;
         }
 
         code {
