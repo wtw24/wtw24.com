@@ -50,3 +50,7 @@ defaultContentLanguage = 'ru'
 
 [params.page]
   toc = true
+
+[services]
+  [services.youtube]
+    privacyEnhanced = true
