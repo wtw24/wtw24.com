@@ -109,7 +109,21 @@ a {
   }
 }
 
+@media (min-width: 767.98px) {
+  .sticky-toc {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 60px;
+    z-index: 1020;
+
+    max-height: 100vh;
+    overflow: auto;
+  }
+}
+
 #toc {
+  margin-bottom: 100px;
+
   .toc-title {
     text-transform: uppercase;
     font-size: 1.3rem;
