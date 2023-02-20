@@ -53,4 +53,5 @@ defaultContentLanguage = 'ru'
 
 [services]
   [services.youtube]
+    disable = false
     privacyEnhanced = true
