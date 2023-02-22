@@ -41,26 +41,27 @@ function initHeaderLink() {
 
 initHeaderLink();
 
-
 window.addEventListener('DOMContentLoaded', (event) => {
+    const links = document.querySelectorAll( '.content a' );
+
+    for (let i = 0, length = links.length; i < length; i++) {
+        if (links[i].hostname !== window.location.hostname) {
+            links[i].target = '_blank';
+        }
+    }
+
+
+    const items = document.querySelectorAll('.bb-text');
+
+    for (let i = 0; i < items.length; ++i) {
+        items[i].innerHTML = items[i].innerHTML.replace(/(\$?\d+)/g, '<span class="bb-num">$1</span>');
+    }
+
     new PagefindUI({
         element: "#search",
         showImages: false
     });
 });
 
-window.addEventListener('DOMContentLoaded', (event) => {
-    const items = document.querySelectorAll('.bb-text');
-
-    for (i = 0; i < items.length; ++i) {
-        items[i].innerHTML = items[i].innerHTML.replace(/(\$?\d+)/g, '<span class="bb-num">$1</span>');
-    }
-
-    $('p').html(function(i,c) {
-        return c.replace(/\d+/g, function(v){
-            return "<span class='numbers'>" + v + "</span>";
-        });
-    });
-});
 
 
